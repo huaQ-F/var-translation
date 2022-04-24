@@ -57,3 +57,5 @@ Translate and replace with hump variables, speek English
 - 用模板右键创建 html、js、vue2、python文件
 ![Vue Py Template] (https://marketplace.visualstudio.com/items?itemName=huaQ-F.vue2-html-python-template)
 
+- translation 中文翻译转换变量
+![translation 中文翻译转换变量] (https://marketplace.visualstudio.com/items?itemName=huaQ-F.translation2var)
