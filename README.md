@@ -1,19 +1,25 @@
-# [驼峰翻译助手](https://marketplace.visualstudio.com/items?itemName=svenzhao.var-translation)
+# [驼峰翻译助手](https://marketplace.visualstudio.com/items?itemName=huaQ-F.var-translation)
 
-[有问题直接报issue](https://github.com/SvenZhao/var-translation/issues) 
+[有问题直接报issue](https://github.com/huaQ-F/var-translation/issues) 
 ```
-因为翻译是通过爬虫实现的 某些情况下发出的请求会被翻译源识别为爬虫阻止
-紧急调整两个翻译渠道 
-分别是谷歌和必应
-可以在插件配置中Translation Engine中切换
-
-
-
-后续可能会通过申请key的方式接入官方的jsdk
+本插件修改原创 https://github.com/SvenZhao/var-translation
 ```
+## 0.14.39 本插件新增功能
+- 添加右键 "选择翻译"
+- 添加 youdaoApi (免费)
+- 添加 baiduApi (需要申请百度翻译的开发者账号)
+- 添加 英文翻译中文显示
+- 添加英文朗读
+- 添加结果字符串长度控制
 
+### 新增的设置选项
+- 在setting.json配置百度api 和 关闭朗读
+  "varTranslation.appId": "百度翻译开发者申请的appId",
+  "varTranslation.password": "百度翻译开发者申请的password",
+  "varTranslation.wordMaxLength":34,  # 翻译结果字符串超出34个字符串则不朗读和省略结果
+  "varTranslation.enableSpeak": true,  # true开启朗读(默认)，false关闭朗读
 
- ## 新增功能 
+ ## 0.13.37 原作者插件功能 
  ### 指定转换类型命令 
 ![image2.png](https://s2.loli.net/2022/04/12/JOEYamiZAPMdfcg.png)
 ### 转换类型命令 设置快捷键
@@ -39,5 +45,10 @@
     mac": "cmd+shift+t"
     
  ## 支持的翻译引擎
-    谷歌 微软 有道 百度
+    谷歌中国 有道 百度
  
+
+
+### 三个修改的插件
+![expand-region-vue] (https://marketplace.visualstudio.com/items?itemName=huaQ-F.expand-region-vue)
+![Vue Py Template] (https://marketplace.visualstudio.com/items?itemName=huaQ-F.vue2-html-python-template)

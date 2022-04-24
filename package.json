@@ -1,10 +1,10 @@
 {
-  "name": "var-translation",
-  "displayName": "驼峰翻译助手",
-  "description": "纠结怎么取变量? 中文一键翻译转换成常用大小驼峰等格式",
-  "publisher": "svenzhao",
+  "name": "translation2var",
+  "displayName": "translation 中文翻译转换变量",
+  "description": "中文一键翻译转换常用大小驼峰等格式取变量，朗读英文，边编程边学英文",
+  "publisher": "huaQ-F",
   "icon": "images/logo.png",
-  "version": "0.13.37",
+  "version": "0.14.38",
   "engines": {
     "vscode": "^1.50.0"
   },
@@ -17,6 +17,7 @@
     "camel",
     "var",
     "翻译",
+    "英文",
     "变量"
   ],
   "activationEvents": [
@@ -28,9 +29,19 @@
       {
         "command": "extension.varTranslation",
         "key": "Alt+shift+t",
-        "mac": "cmd+shift+t"
+        "mac": "cmd+shift+t",
+        "when": "editorHasSelection"
       }
     ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.varTranslation",
+          "group": "navigation",
+          "when": "editorHasSelection"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "extension.varTranslation",
@@ -106,15 +117,37 @@
         "varTranslation.translationEngine": {
           "type": "string",
           "enum": [
-            "google",
-            "bing"
+            "googleFree",
+            "youdaoFree",
+            "baidu"
           ],
           "enumDescriptions": [
-            "谷歌中国",
-            "必应"
+            "谷歌中国-免费接口无需配置账号",
+            "有道-免费接口无需配置账号",
+            "百度翻译API"
           ],
-          "default": "google",
+          "default": "youdaoFree",
           "description": "翻译引擎"
+        },
+        "varTranslation.enableSpeak": {
+          "type": "boolean",
+          "default": true,
+          "description": "启用朗读"
+        },
+        "varTranslation.wordMaxLength": {
+            "type": "number",
+            "default": 34,
+            "description": "超过这个长度就不处理了。"
+        },
+        "varTranslation.appId": {
+            "type": "string",
+            "default": "",
+            "description": "翻译API的账号，通常是appid"
+        },
+        "varTranslation.password": {
+            "type": "string",
+            "default": "",
+            "description": "翻译API的账号密钥，通常是指password或者appSecret"
         }
       }
     }
@@ -152,11 +185,13 @@
   },
   "dependencies": {
     "@translate-tools/core": "^0.2.8",
-    "change-case": "^4.1.2"
+    "change-case": "^4.1.2",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "say": "^0.16.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SvenZhao/var-translation"
-  },
-  "homepage": "https://github.com/SvenZhao/var-translation/blob/master/README.md"
+    "url": "https://github.com/huaQ-F/translation2var"
+  }
 }
