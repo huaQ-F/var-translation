@@ -1,4 +1,5 @@
-# [驼峰翻译助手](https://marketplace.visualstudio.com/items?itemName=huaQ-F.var-translation)
+# var-translation
+Translate and replace with hump variables, speek English 
 
 [有问题直接报issue](https://github.com/huaQ-F/var-translation/issues) 
 ```
@@ -49,6 +50,10 @@
  
 
 
-### 三个修改的插件
+## 三个修改的插件
+- 扩展选区插件
 ![expand-region-vue] (https://marketplace.visualstudio.com/items?itemName=huaQ-F.expand-region-vue)
+
+- 用模板右键创建 html、js、vue2、python文件
 ![Vue Py Template] (https://marketplace.visualstudio.com/items?itemName=huaQ-F.vue2-html-python-template)
+
